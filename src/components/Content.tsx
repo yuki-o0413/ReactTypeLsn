@@ -1,6 +1,6 @@
 'use strict';
 import React,{ useState } from 'react';
-import { createStore } from "redux";
+// import { createStore } from "redux";
 
 export default function Content(props) {
   //NAME３文字以上ででsaveボタン押せるようにdisabledを入れる
