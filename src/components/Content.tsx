@@ -4,6 +4,7 @@ import React,{ useState } from 'react';
 
 interface ContentProps {
   id: string,
+  name: string,
   onChangeId: (e: React.ChangeEvent<HTMLInputElement>) => void,
   onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void,
   onSaveItem(): void
@@ -20,6 +21,8 @@ export default function Content(props:ContentProps) {
         onChangeId={props.onChangeId}
         onChangeName={props.onChangeName}
         setCheckName={setCheckName}
+        id = ''
+        name = ''
       />
       <button type="button"
         className="btn btn-outline-success"
@@ -37,7 +40,7 @@ interface FormProps {
   onChangeId: (e: React.ChangeEvent<HTMLInputElement>) => void,
   onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void,
   name: string,
-  setCheckName():boolean
+  setCheckName: (value: boolean) => void
   }
 
 function Form(props:FormProps) {
