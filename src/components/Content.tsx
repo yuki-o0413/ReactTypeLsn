@@ -2,18 +2,20 @@
 import React,{ useState } from 'react';
 // import { createStore } from "redux";
 
-export default function Content(props) {
+interface ContentProps {
+  id: string,
+  onChangeId: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onSaveItem(): void
+  }
+
+export default function Content(props:ContentProps) {
   //NAME３文字以上ででsaveボタン押せるようにdisabledを入れる
   const [checkName, setCheckName] = useState(true);
-  // const ids = props.formItem.id;
-  // const names = props.formItem.name;
-  // console.log(props.formItem.id["list"])
-  // const ids = props.formItem.id;
   console.log(props)
   return (
     <>
       <p>content</p>
-​
       <Form
         onChangeId={props.onChangeId}
         onChangeName={props.onChangeName}
@@ -30,7 +32,15 @@ export default function Content(props) {
   );
 }
 
-function Form(props) {
+interface FormProps {
+  id: string,
+  onChangeId: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  name: string,
+  setCheckName():boolean
+  }
+
+function Form(props:FormProps) {
   return (
     <form>
       <div className="form-group">
@@ -50,7 +60,7 @@ function Form(props) {
             (e) =>
             {
               if (e.target.value.length >= 3){
-                setCheckName(false)
+                props.setCheckName(false)
                 {props.onChangeName(e)}
               }
             }
