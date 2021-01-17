@@ -1,34 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 
 import './App.css';
 import Content from './components/Content';
 
 function App() {
-  onChangeId = (e) => {
-    console.log(e.target.value)
-    this.props.updateFormId(e.target.value);
+  const [id, updateFormId] = useState('');
+  const [name, updateFormName] = useState('');
+
+  const onChangeId = (e: any) => {
+    console.log(e.target.value);
+    updateFormId(e.target.value);
   }
 // forName
-  onChangeName = (e) => {
+  const onChangeName = (e: any) => {
     console.log(e.target.value)
-    this.props.updateFormName(e.target.value);
+    updateFormName(e.target.value);
   }
 // clickSaveButton
-  onSaveItem = () => {
-    console.log(this.props)
-    console.log("SAVE_ID: ",this.props.id);
-    console.log("SAVE_NAME: ",this.props.name);
+  const onSaveItem = () => {
+    // console.log(props)
+    console.log("SAVE_ID: ",id);
+    console.log("SAVE_NAME: ",name);
   }
 
-  const formItem = this.props
-    // formEvent
-    const contentHandler = ({onChangeId, onChangeName, onSaveItem}) => ({ onChangeIdonChangeName, onSaveItem })
-    console.log('App.render:', this.props);
+  // const formItem = this.props
+  //   // formEvent
+  //   const contentHandler = ({onChangeId, onChangeName, onSaveItem}) => ({ onChangeIdonChangeName, onSaveItem })
+    // console.log('App.render:', props);
 
   return (
     <>
-      <Content formItem={formItem} {...contentHandler(this)} />
+      <Content
+        id = ''
+        name = ''
+        onChangeId={onChangeId}
+        onChangeName={onChangeName}
+        onSaveItem={onSaveItem}
+      />
     </>
   );
 }
