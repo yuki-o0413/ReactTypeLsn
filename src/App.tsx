@@ -32,8 +32,8 @@ function App() {
   return (
     <>
       <Content
-        id = ''
-        name = ''
+        id = {id}
+        name = {name}
         onChangeId={onChangeId}
         onChangeName={onChangeName}
         onSaveItem={onSaveItem}
