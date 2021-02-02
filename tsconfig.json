@@ -19,7 +19,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": false,
+    // “noImplicitAny”: false はTypeScript の型チェックを無効化してしまうので、あまり使わない方がいい。まずはこれを true にして型エラーを修正
+    "noImplicitAny": true,
   },
   "include": [
     "src"

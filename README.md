@@ -44,3 +44,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+#installation
+```
+
+
+Reduxを導入
+npm install --save redux react-redux
+npm notice created a lockfile as package-lock.json. You should commit this file.
++ react-redux@7.2.2
++ redux@4.0.5
+
+react-reduxの型定義ファイルのインストール
+$ npm install -D @types/react-redux
++ @types/react-redux@7.1.16
+
+```
