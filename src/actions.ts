@@ -9,18 +9,27 @@ interface UpdateFormName {
   payload: { name: string }
 }
 
+interface SaveItem {
+  type: 'SAVE_ITEM'
+}
+
 // union 型と言って、ActionType 型の値は UpdateFormId 型の値か、UpdateFormName 型の値のどちらかになるということ
-export type ActionType = UpdateFormId | UpdateFormName;
+export type ActionType = UpdateFormId | UpdateFormName | SaveItem;
 
 export const updateFormId = (id:string) => {
   return {
-      type: 'UPDATE_ID',
-      payload: { id }
+    type: 'UPDATE_ID',
+    payload: { id }
   };
 }
 export const updateFormName = (name:string) => {
   return {
-      type: 'UPDATE_NAME',
-      payload: { name }
+    type: 'UPDATE_NAME',
+    payload: { name }
+  };
+}
+export const saveItem = () => {
+  return {
+    type: 'SAVE_ITEM'
   };
 }
